@@ -28,7 +28,7 @@ function App() {
                 {/* <!-- home page --> */}
                 <section className="home">
                     <div className="info">
-                        <h1>ARE YOU HUNDRY</h1>
+                        <h1>ARE YOU HUNGRY</h1>
                         <h1>LET'S FIND SOME DELISIOUS AND EASY TO MAKE RECIPIES</h1>
                         <p>GET STARTED</p>
                         <div id="filter"></div>
@@ -74,7 +74,7 @@ function App() {
                 <section className="recipies-colection">
 
                     <div className="recipie">
-                        <img src="bg-image.jpg" alt="e/xample1" />
+                        <img src="https://i.pinimg.com/474x/bb/16/7e/bb167e9ca1c4efeb5e7a3bab87dbbfab.jpg" alt="e/xample1" />
                         <div className="container">
                             <p className="title">
                                 RECIPIE1
@@ -86,7 +86,7 @@ function App() {
                         </div>
                     </div>
                     <div className="recipie">
-                        <img src='bg-image.jpg' alt="e/xample1" />
+                        <img src='https://sodelicious.recipes/wp-content/uploads/2018/11/type-of-salmon-e1541579682737-720x380.jpg' alt="e/xample1" />
                         <div className="container">
                             <p className="title">
                                 RECIPIE1
@@ -98,7 +98,7 @@ function App() {
                         </div>
                     </div>
                     <div className="recipie">
-                        <img src="./bg-image.jpg" alt="e/xample1" />
+                        <img src="https://lexiscleankitchen.com/wp-content/uploads/2018/07/Roasted-Chicken-Veggies3.jpg" alt="e/xample1" />
                         <div className="container">
                             <p className="title">
                                 RECIPIE1
@@ -114,8 +114,113 @@ function App() {
 
                 <h2>No recipies yet.</h2>
 
-            </main>
+                {/* register */}
 
+                <section className="register">
+                    <div className="form">
+                        <h2>Register</h2>
+                        <form className="register-form">
+                            <input
+                                type="text"
+                                name="email"
+                                id="register-email"
+                                placeholder="email"
+                            />
+                            <input
+                                type="password"
+                                name="password"
+                                id="register-password"
+                                placeholder="password"
+                            />
+                            <input
+                                type="password"
+                                name="re-password"
+                                id="repeat-password"
+                                placeholder="repeat password"
+                            />
+                            <button type="submit">register</button>
+                            <p className="message">Already registered? <a href="#">Login</a></p>
+                        </form>
+                    </div>
+                </section>
+
+
+                {/* Login */}
+
+                <section className="login">
+                    <div className="form">
+                        <h2>Login</h2>
+                        <form className="login-form">
+                            <input
+                                type="text"
+                                name="email"
+                                id="email"
+                                placeholder="email" />
+                            <input
+                                type="password"
+                                name="password"
+                                id="password"
+                                placeholder="password"
+                            />
+                            <button type="submit">login</button>
+                            <p className="message">
+                                Not registered? <a href="#">Create an account</a>
+                            </p>
+                        </form>
+                    </div>
+                </section>
+
+            </main>
+{/* create */}
+<section className="create">
+          <div className="form">
+            <h2>New recipie</h2>
+            <form className="create-form">
+              <input
+                type="text"
+                name="title"
+                id="title"
+                placeholder="Recipie name"
+              />
+              <input
+                type="text"
+                name="imageUrl"
+                id="recipie-image"
+                placeholder="Recipie Image"
+              />
+              <input
+                type="text"
+                name="category"
+                id="recipie-category"
+                placeholder="Category"
+              />
+              
+              <input
+                type="text"
+                name="ingredients"
+                id="ingredients"
+                placeholder="Ingredients"
+              />
+               <input
+                type="text"
+                name="time"
+                id="time"
+                placeholder="Preparation Time"
+              />
+
+              <textarea
+                id="recipie-description"
+                name="description"
+                placeholder="Preparation steps"
+                rows="5"
+                cols="50"
+              ></textarea>
+              <button type="submit">Add</button>
+            </form>
+          </div>
+        </section>
+
+{/* details */}
 
 
             <footer>
