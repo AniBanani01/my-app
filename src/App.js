@@ -74,7 +74,7 @@ function App() {
                 <section className="recipies-colection">
 
                     <div className="recipie">
-                        <img src="./demo-code/bg-image.jpg" alt="e/xample1" />
+                        <img src="bg-image.jpg" alt="e/xample1" />
                         <div className="container">
                             <p className="title">
                                 RECIPIE1
@@ -86,7 +86,7 @@ function App() {
                         </div>
                     </div>
                     <div className="recipie">
-                        <img src="./demo-code/bg-image.jpg" alt="e/xample1" />
+                        <img src='bg-image.jpg' alt="e/xample1" />
                         <div className="container">
                             <p className="title">
                                 RECIPIE1
