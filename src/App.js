@@ -39,30 +39,30 @@ function App() {
                     <h2>CATEGORIES</h2>
                     <article>
 
-                        <img src="./demo-code/bg-image.jpg" alt="" />
+                        {/* <img src="./demo-code/bg-image.jpg" alt="" /> */}
                         <h4>WITH UNDER 5 INGREDIENTS</h4>
-                        <p>
+                        {/* <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                             et dolore magna aliqua.
-                        </p>
+                        </p> */}
                         <a href="#">Read More</a>
                     </article>
                     <article>
-                        <img src="./demo-code/bg-image.jpg" alt="" />
+                        {/* <img src="./demo-code/bg-image.jpg" alt="" /> */}
                         <h4>READY FOR 15 MINUTES</h4>
-                        <p>
+                        {/* <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                             et dolore magna aliqua.
-                        </p>
+                        </p> */}
                         <a href="#">Read More</a>
                     </article>
                     <article>
-                        <img src="./demo-code/bg-image.jpg" alt="" />
+                        {/* <img src="./demo-code/bg-image.jpg" alt="" /> */}
                         <h4>YOU SHOULD TRY THIS</h4>
-                        <p>
+                        {/* <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                             et dolore magna aliqua.
-                        </p>
+                        </p> */}
                         <a href="#">Read More</a>
                     </article>
                 </section>
@@ -171,57 +171,121 @@ function App() {
                 </section>
 
             </main>
-{/* create */}
-<section className="create">
-          <div className="form">
-            <h2>New recipie</h2>
-            <form className="create-form">
-              <input
-                type="text"
-                name="title"
-                id="title"
-                placeholder="Recipie name"
-              />
-              <input
-                type="text"
-                name="imageUrl"
-                id="recipie-image"
-                placeholder="Recipie Image"
-              />
-              <input
-                type="text"
-                name="category"
-                id="recipie-category"
-                placeholder="Category"
-              />
-              
-              <input
-                type="text"
-                name="ingredients"
-                id="ingredients"
-                placeholder="Ingredients"
-              />
-               <input
-                type="text"
-                name="time"
-                id="time"
-                placeholder="Preparation Time"
-              />
+            {/* create */}
+            <section className="create">
+                <div className="form">
+                    <h2>New recipie</h2>
+                    <form className="create-form">
+                        <input
+                            type="text"
+                            name="title"
+                            id="title"
+                            placeholder="Recipie name"
+                        />
+                        <input
+                            type="text"
+                            name="imageUrl"
+                            id="recipie-image"
+                            placeholder="Recipie Image"
+                        />
+                        <input
+                            type="text"
+                            name="category"
+                            id="recipie-category"
+                            placeholder="Category"
+                        />
 
-              <textarea
-                id="recipie-description"
-                name="description"
-                placeholder="Preparation steps"
-                rows="5"
-                cols="50"
-              ></textarea>
-              <button type="submit">Add</button>
-            </form>
-          </div>
-        </section>
+                        <input
+                            type="text"
+                            name="ingredients"
+                            id="ingredients"
+                            placeholder="Ingredients"
+                        />
+                        <input
+                            type="text"
+                            name="time"
+                            id="time"
+                            placeholder="Preparation Time"
+                        />
+                        <input
+                            type="text"
+                            name="level"
+                            id="level"
+                            placeholder="Level"
+                        />
 
-{/* details */}
+                        <textarea
+                            id="recipie-description"
+                            name="description"
+                            placeholder="Preparation steps"
+                            rows="5"
+                            cols="50"
+                        ></textarea>
+                        <button type="submit">Add</button>
+                    </form>
+                </div>
+            </section>
 
+            {/* details */}
+            <section className="recipie-details">
+                <h1>Recipie Details</h1>
+                <div className="info-section">
+
+                    <div className="recipie-header">
+                        <img className="recipie-img" src="https://i.pinimg.com/474x/bb/16/7e/bb167e9ca1c4efeb5e7a3bab87dbbfab.jpg" />
+                       <div > 
+                        <h1>Recipie name</h1>
+                        <p className="category">Under 5 ingredients</p>
+                        <p className="level">For beginers</p>
+                        <p className="cooking-time">15 min</p>
+                        </div>
+                        <div>
+                            <h1>INGREDIENTS</h1>
+                            <ul>
+                                <li>Eggs</li>
+                                <li>Black pepper</li>
+                                <li>Garlic</li>
+                                <li>Pene</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="buttons">
+                        <button className="button">Edit</button>
+                        <button className="button">Delete</button>
+                    </div>
+
+                    <p className="text">ksknjkdfskdjnskjgfsnsgfnfgfjkgfkfgjgjfkgsnkjksjsgkangfjnkjfnfkfdkanjakvfnjj</p>
+
+                    <div className="details-comments">
+                        <h2>Comments:</h2>
+                        <ul>
+                            <li className="comment">
+                                <p>Username: comment</p>
+                            </li>
+                        </ul>
+                <article className="create-comment">
+                    <h2>Add new comment:</h2>
+                    <form className="form" >
+                        <textarea name="comment"
+                            placeholder="Comment......"
+                        ></textarea>
+                        <input
+                            className="btn submit"
+                            type="submit"
+                            value="Add Comment" />
+                    </form>
+                </article>
+                    </div>
+
+
+
+                </div>
+
+            </section>
+
+
+
+            {/* footer */}
 
             <footer>
 
