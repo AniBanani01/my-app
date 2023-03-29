@@ -1,3 +1,6 @@
+import { Routes, Route } from 'react-router-dom'
+
+
 import './reset.css'
 import './App.css';
 
@@ -16,15 +19,18 @@ function App() {
         <>
             <Header />
             <main>
-                <Home />
-                <Recipies />
-                <Register />
-                <Login />
-                <Create/>
-                <Details/>
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/login' element={<Login />} />
+                    {/* <Route path='/logout' element={<Logout />} /> */}
+                    <Route path='/register' element={<Register />} />
+                    <Route path='/create-recipie' element={<Create />} />
+                    <Route path='/recipies' element={<Recipies />} />
+                    <Route path='/recipies/:recipieID' element={<Details />} />
+                </Routes>
             </main>
-          
-          <Footer/>
+
+            <Footer />
 
         </>
     );
