@@ -1,3 +1,4 @@
+
 export const Home = () => {
     return (
         <>
@@ -13,31 +14,15 @@ export const Home = () => {
     <section className="categories">
         <h2>CATEGORIES</h2>
         <article>
-
-            {/* <img src="./demo-code/bg-image.jpg" alt="" /> */}
             <h4>WITH UNDER 5 INGREDIENTS</h4>
-            {/* <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                et dolore magna aliqua.
-            </p> */}
             <a href="#">Read More</a>
         </article>
         <article>
-            {/* <img src="./demo-code/bg-image.jpg" alt="" /> */}
             <h4>READY FOR 15 MINUTES</h4>
-            {/* <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                et dolore magna aliqua.
-            </p> */}
             <a href="#">Read More</a>
         </article>
         <article>
-            {/* <img src="./demo-code/bg-image.jpg" alt="" /> */}
             <h4>YOU SHOULD TRY THIS</h4>
-            {/* <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                et dolore magna aliqua.
-            </p> */}
             <a href="#">Read More</a>
         </article>
     </section>
