@@ -8,7 +8,7 @@ export const Details=()=>{
             <div className="recipie-header">
                 <img className="recipie-img" src="https://i.pinimg.com/474x/bb/16/7e/bb167e9ca1c4efeb5e7a3bab87dbbfab.jpg"  alt="img"/>
                 <div >
-                    <h1>Recipie name</h1>
+                    <h1 className="recipie">Recipie name</h1>
                     <p className="category">Under 5 ingredients</p>
                     <p className="level">For beginers</p>
                     <p className="cooking-time">15 min</p>
