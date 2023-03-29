@@ -6,7 +6,7 @@ export const Details=()=>{
         <div className="info-section">
 
             <div className="recipie-header">
-                <img className="recipie-img" src="https://i.pinimg.com/474x/bb/16/7e/bb167e9ca1c4efeb5e7a3bab87dbbfab.jpg" />
+                <img className="recipie-img" src="https://i.pinimg.com/474x/bb/16/7e/bb167e9ca1c4efeb5e7a3bab87dbbfab.jpg"  alt="img"/>
                 <div >
                     <h1>Recipie name</h1>
                     <p className="category">Under 5 ingredients</p>
