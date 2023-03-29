@@ -1,48 +1,11 @@
-/* .App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 @import url("https://use.fontawesome.com/releases/v6.0.0/css/all.css");
 
 /* GENERIC STYLES */
-
+/* 
 * {
     box-sizing: border-box;
-}
+} */
 
 body {
     font-family: Helvetica, sans-serif;
@@ -56,99 +19,116 @@ a:hover {
    color:  #44cc52;
 }
 
-/* HEADER  */
-header {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-evenly;
-   background-color: #393F43;
-
-   position: sticky;
-   top: 0;
-   z-index: 10;
-
-}
-
-header nav{
-    display: flex;
-    justify-content: space-around;
-}
-
-
-header nav ul {
-    display: flex;
-    gap: 20px;
-    list-style-type: none;
-}
-
-
-header nav ul li a {
-    text-decoration: none;
-    color:  #FFFFFF;
-    font-size: 1rem;
-}
 
 /* MAIN */
+
 main .home {
-    width: 100vw;
-    height: 400px;
-    background-image: url("bg-image.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  width: 100vw;
+  height: 400px;
+  background-image: url("./bg-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-
-
 .home div.info {
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    margin: 300px ;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin: 300px ;
 }
 
 #filter {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: black;
-    border-radius: 20px;
-    opacity: 0.4;
-    z-index: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  border-radius: 20px;
+  opacity: 0.4;
+  z-index: 0;
 }
 
 .home .info h1 {
-    position: relative;
-    color: white;
-    font-size: 32px;
-    z-index: 1;
-    margin: 5px;
-    
+  position: relative;
+  color: white;
+  font-size: 32px;
+  z-index: 1;
+  margin: 5px;
+  
 }
 
 .home .info p {
-    position: relative;
-    display: inline-block;
-    background-color: #2e9038;
-    color: white;
-    font-size: 28px;
-    padding: 5px 10px;
-    border-radius: 50px;
-    z-index: 1;
-    margin: 5px;
+  position: relative;
+  display: inline-block;
+  background-color: #2e9038;
+  color: white;
+  font-size: 28px;
+  padding: 5px 10px;
+  border-radius: 50px;
+  z-index: 1;
+  margin: 5px;
+}
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  background-color: #afafb0;
+  justify-content: center;
+  padding-bottom: 30px;
+  padding-top: 150px;
 }
 
-.categories {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    background-color: #afafb0;
-    justify-content: center;
-    padding-bottom: 30px;
-    padding-top: 150px;
+.categories article {
+  flex-basis: 20%;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.categories article img {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.categories article h4 {
+  font-size: 28px;
+  color: grey;
+  text-align: center;
+  margin: 10px 0px 0px 0px;
+}
+
+.categories article p {
+  color: grey;
+  text-align: center;
+  margin: 5px;
+  font-size: 24px;
+}
+
+.categories article a {
+  text-decoration: none;
+  background-color: #454545;
+  color: white;
+  font-size: 20px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  width: max-content;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.categories article a:hover{
+  background-color: #2e9038;
+  color: #FFFFFF;
+}
+
+
 
 /* .categories */
  h2 {
@@ -165,54 +145,6 @@ h2:after {
     width: 100px;
     display: block;
     margin: 0 auto;
-}
-
-.categories article {
-    flex-basis: 20%;
-    border-radius: 5px;
-    background-color: #FFFFFF;
-
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.categories article img {
-    width: 100%;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-
-.categories article h4 {
-    font-size: 28px;
-    color: grey;
-    text-align: center;
-    margin: 10px 0px 0px 0px;
-}
-
-.categories article p {
-    color: grey;
-    text-align: center;
-    margin: 5px;
-    font-size: 24px;
-}
-
-.categories article a {
-    text-decoration: none;
-    background-color: #454545;
-    color: white;
-    font-size: 20px;
-    padding: 5px 15px;
-    border-radius: 5px;
-    width: max-content;
-    margin-top: 10px;
-    margin-bottom: 15px;
-}
-
-.categories article a:hover{
-    background-color: #2e9038;
-    color: #FFFFFF;
 }
 
 
@@ -362,7 +294,6 @@ h2:after {
   text-decoration: none;
 }
 
-
 /* details */
 .recipie-details {
   position: relative;
@@ -470,6 +401,12 @@ div.buttons{
   gap: 30px;
   
 }
+
+article.create-comment{
+  padding-bottom: 20px;
+}
+
+
 .button {
   flex-basis: 10%;
   text-transform: uppercase;
@@ -483,46 +420,3 @@ div.buttons{
   cursor: pointer;
   border-radius: 5px;
 }
-
-article.create-comment{
-  padding-bottom: 20px;
-}
-
-/* FOOTER */
-
-
-footer nav {
-    background-color: #393F43;
-    display: flex;
-    justify-content: space-around;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-footer nav ul {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-footer nav ul li a {
-    text-decoration: none;
-    color: #FFFFFF;
-    font-size: 12px;
-}
-
-footer p {
-    background-color: #262B2F;
-    text-align: center;
-    color: #FFFFFF;
-    margin: 0px;
-    font-size: 12px;
-    padding: 5px;
-}
-
-i {
-    color: white;
-    margin-left: 10px;
-}
-
