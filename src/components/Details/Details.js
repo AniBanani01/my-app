@@ -3,15 +3,18 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 
 import { recipieServiceFactory } from '../../services/recipieService';
 import * as commentService from '../../services/commentService';
+import * as likeService from '../../services/likeService';
+
+
 import { useService } from '../../hooks/useService';
 import { useAuthContext } from '../../contexts/AuthContext';
 
 import { RecipieComment } from './RecipieComment/RecipieComment';
+import { LikeButton } from './LikeButton';
 import { recipieReducer } from '../../reducers/recipieReducer';
 import { useRecipieContext } from '../../contexts/RecipieContext';
-import { LikeButton } from './RcecipieLikes/RecipieLikes'
 
-export const Details=()=>{
+export const Details = () => {
     const { recipieId } = useParams();
     const { userId, isAuthenticated, userEmail } = useAuthContext();
     const { deleteRecipie } = useRecipieContext();
@@ -19,20 +22,23 @@ export const Details=()=>{
     const recipieService = useService(recipieServiceFactory)
     const navigate = useNavigate();
 
+
     useEffect(() => {
         Promise.all([
             recipieService.getOne(recipieId),
             commentService.getAll(recipieId),
-        ]).then(([recipieData, comments]) => {
+            likeService.getAll(recipieId)
+        ]).then(([recipieData, comments, likes]) => {
             const recipieState = {
                 ...recipieData,
                 comments,
+                likes
             };
-            
-            dispatch({type: 'RECIPIE_FETCH', payload: recipieState})
+            dispatch({ type: "LIKE_RECIPIE", payload: recipieState })
+            dispatch({ type: 'RECIPIE_FETCH', payload: recipieState })
         });
     }, [recipieId]);
-  
+
 
     // add coments
     const onCommentSubmit = async (values) => {
@@ -44,7 +50,20 @@ export const Details=()=>{
             userEmail,
         });
     };
+    //add like    
+    const [isLiked, setIsLiked] = useState(true);
 
+    const onLikeSubmit = async (values) => {
+        const response = await likeService.create(recipieId, values.like);
+
+        dispatch({
+            type: 'LIKE_ADD',
+            payload: response,
+            userEmail,
+        });
+    };
+
+    // const isLiked=false
     const isOwner = recipie._ownerId === userId;
 
     const onDeleteClick = async () => {
@@ -61,45 +80,51 @@ export const Details=()=>{
     };
 
 
-return(
-         
+    return (
+
         <section className="recipie-details">
-        <h1>Recipie Details</h1>
-        <div className="info-section">
+            <h1>Recipie Details</h1>
+            <div className="info-section">
 
-            <div className="recipie-header">
-                <img className="recipie-img" src={recipie.imageUrl} alt={recipie.title}/>
-                <div >
-                    <h1 className="recipie">{recipie.title}</h1>
-                    <p className="category">{recipie.category}</p>
-                    <p className="level">{recipie.level}</p>
-                    <p className="cooking-time">{recipie.time}</p>
+                <div className="recipie-header">
+                    <img className="recipie-img" src={recipie.imageUrl} alt={recipie.title} />
+                    <div >
+                        <h1 className="recipie">{recipie.title}</h1>
+                        <p className="categ">Category: {recipie.category}</p>
+                        <p className="level">Level: {recipie.level}</p>
+                        <p className="cooking-time">Time to prepare: {recipie.time}</p>
+                    </div>
+                    <div>
+                        <h1>INGREDIENTS</h1>
+                        <ul>
+                            {recipie.ingredients && ((recipie.ingredients).split(",")).map(i => (
+                                <li key={i}>
+                                    {i}
+                                </li>
+                            ))}
+
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <h1>INGREDIENTS</h1>
+                {isOwner && (
+                    <div className="buttons">
+                        <Link to={`/recipies/${recipie._id}/edit`} className="button">Edit</Link>
+                        <button className="button" onClick={onDeleteClick}>Delete</button>
+                    </div>
+                )}
+
+                {recipie.likes?.length && (
+                    <p>Likes:{recipie.likes?.length} </p>
+                )}
+                {isAuthenticated && !isOwner && (
+                    <LikeButton onLikeSubmit={onLikeSubmit} />
+                )}
+
+                <p className="text">{recipie.text}</p>
+
+                <div className="details-comments">
+                    <h2>Comments:</h2>
                     <ul>
-                        {recipie.ingredients &&( (recipie.ingredients).split(",")).map(i=>(
-                            <li key={i}>
-                                {i}
-                            </li>
-                        ))}
-                     
-                    </ul>
-                </div>
-            </div>
-                    {isOwner && (
-                            <div className="buttons">
-                                {/* <Link to={`/recipies/${recipie._id}/edit`} className="button">Edit</Link> */}
-                                <button className="button">Edit</button>
-                                <button className="button" onClick={onDeleteClick}>Delete</button>
-                            </div>
-                        )}
-
-            <p className="text">{recipie.text}</p>
-
-            <div className="details-comments">
-                <h2>Comments:</h2>
-                <ul>
                         {recipie.comments && recipie.comments.map(x => (
                             <li key={x._id} className="comment">
                                 <p>{x.author.email}: {x.comment}</p>
@@ -109,13 +134,11 @@ return(
                     {!recipie.comments?.length && (
                         <p className="no-comment">No comments.</p>
                     )}
+                </div>
+
+                {isAuthenticated && <RecipieComment onCommentSubmit={onCommentSubmit} />}
             </div>
 
-            {isAuthenticated && <RecipieComment onCommentSubmit={onCommentSubmit} />   }
-
-        {/* <div><LikeButton/></div> */}
-        </div>
-
-    </section>
+        </section>
     )
 }
