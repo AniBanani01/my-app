@@ -33,6 +33,12 @@ export const recipieServiceFactory = (token) => {
 
     const deleteRecipie = (recipieId) => request.delete(`${url}/${recipieId}`);
 
+    const getByCategory=async(category)=>{
+        const result =await getAll();
+        let filterRecipies=result.filter(recipie =>recipie.category===category)
+        return filterRecipies
+    }
+
 
     return {
         getAll,
@@ -40,5 +46,6 @@ export const recipieServiceFactory = (token) => {
         create,
         edit,
         delete: deleteRecipie,
+        getByCategory,
     };
 }
