@@ -1,22 +1,10 @@
-// import React, { useState } from 'react';
 
+export const RecipieLikes = () => {
+    // const [setLikes, likes] = useState(0);
 
-// export const LikeButton = () => {
-//   const [likes, setLikes] = useState(0);
-//   const [isClicked, setIsClicked] = useState(false);
-
-//   const handleClick = () => {
-//     if (isClicked) {
-//       setLikes(likes - 1);
-//     } else {
-//       setLikes(likes + 1);
-//     }
-//     setIsClicked(!isClicked);
-//   };
-
-//   return (
-//     <button className={ `like-button ${isClicked && 'liked'}` } onClick={ handleClick }>
-//       <span className="likes-counter">{ `Like | ${likes}` }</span>
-//     </button>
-//   );
-// };
+    return (
+        <article className="create-like">
+       <button >Like</button>
+    </article>
+    );
+};
